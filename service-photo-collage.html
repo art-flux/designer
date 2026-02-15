@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collage - ART FLUX DESIGNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#38bdf8',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-primary text-white">
+
+    <nav class="fixed w-full z-50 bg-primary/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"
+                class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">ART
+                FLUX DESIGNER</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="hover:text-accent transition-colors">About</a>
+                <a href="services.html" class="text-accent transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+                <a href="contact.html"
+                    class="px-5 py-2 bg-accent text-primary font-semibold rounded-full hover:bg-white transition-all">Contact</a>
+            </div>
+            <button class="md:hidden text-white"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-primary border-b border-gray-800" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="about.html" class="hover:text-accent">About</a>
+                <a href="services.html" class="text-accent">Services</a>
+                <a href="projects.html" class="hover:text-accent">Projects</a>
+                <a href="contact.html" class="text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 text-center bg-gray-900/50">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Photo <span class="text-accent">Collage</span></h1>
+        <p class="text-secondary max-w-xl mx-auto">Beautifully arranged memories for gifts or personal keepsakes.</p>
+    </div>
+
+    <section class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8 border-l-4 border-accent pl-4">Our Recent Work</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="rounded-xl overflow-hidden border border-gray-800 group relative">
+                <img  src="im/29.png"
+                    alt="Family Collage"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-accent font-bold text-xl">Family Memories</p>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-gray-800 group relative">
+                <img  src="im/30.png"
+                    alt="Graduation Collage"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-accent font-bold text-xl">Special Events</p>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-gray-800 group relative">
+                <img  src="im/31.png"
+                    alt="Friends Collage"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p class="text-accent font-bold text-xl">Travel & Friends</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-900/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Pricing Packages</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="p-8 rounded-2xl border border-gray-700 bg-gray-800/50 hover:border-gray-500 transition-colors">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Basic</h3>
+                    <p class="text-4xl font-bold text-white mb-6">$10</p>
+                    <ul class="space-y-3 text-gray-400 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Up to 10 Photos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Digital File Only</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="block w-full py-3 text-center border border-accent text-accent rounded-lg hover:bg-accent hover:text-primary font-bold transition-all">Choose
+                        Plan</a>
+                </div>
+                <div
+                    class="p-8 rounded-2xl border border-accent bg-gray-800/80 relative transform scale-105 shadow-xl shadow-accent/10">
+                    <div
+                        class="absolute top-0 right-0 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        POPULAR</div>
+                    <h3 class="text-xl font-bold text-accent mb-4">Standard</h3>
+                    <p class="text-4xl font-bold text-white mb-6">$20</p>
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Up to 25 Photos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> High Resolution For Print</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Custom Layout</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="block w-full py-3 text-center bg-accent text-primary rounded-lg hover:bg-white font-bold transition-all">Choose
+                        Plan</a>
+                </div>
+                <div
+                    class="p-8 rounded-2xl border border-gray-700 bg-gray-800/50 hover:border-gray-500 transition-colors">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Premium</h3>
+                    <p class="text-4xl font-bold text-white mb-6">$35</p>
+                    <ul class="space-y-3 text-gray-400 mb-8">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-purple-400 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Up to 50 Photos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-purple-400 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Cinematic Retouching</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-purple-400 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> Unlimited Revisions</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="block w-full py-3 text-center border border-purple-500 text-purple-400 rounded-lg hover:bg-purple-500 hover:text-white font-bold transition-all">Choose
+                        Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2026 Art Flux Designer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

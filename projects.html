@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - ART FLUX DESIGNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#38bdf8',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .filter-btn.active {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body class="bg-primary text-white">
+
+    <nav class="fixed w-full z-50 bg-primary/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"
+                class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">ART
+                FLUX DESIGNER</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="hover:text-accent transition-colors">About</a>
+                <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="projects.html" class="text-accent transition-colors">Projects</a>
+                <a href="videos.html" class="hover:text-accent transition-colors">Videos</a>
+                <a href="contact.html"
+                    class="px-5 py-2 bg-accent text-primary font-semibold rounded-full hover:bg-white transition-all">Contact</a>
+            </div>
+            <button class="md:hidden text-white"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-primary border-b border-gray-800" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="about.html" class="hover:text-accent">About</a>
+                <a href="services.html" class="hover:text-accent">Services</a>
+                <a href="projects.html" class="text-accent">Projects</a>
+                <a href="videos.html" class="hover:text-accent">Videos</a>
+                <a href="contact.html" class="text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 text-center bg-gray-900/50">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our <span class="text-accent">Projects</span></h1>
+        <p class="text-secondary max-w-xl mx-auto">Explore our portfolio of curated designs and successful projects.</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-12 container mx-auto px-6">
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" id="project-filters">
+            <button
+                class="filter-btn active px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('all', this)">All</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('tute', this)">Tute Cover Page</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('social', this)">Social Media</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('logo', this)">Logo Design</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('invitation', this)">Invitation Card</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('business', this)">Business Card</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('label', this)">Product Label</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('cv', this)">CV Design</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('book', this)">Book Cover</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('tshirt', this)">T-Shirt Design</button>
+            <button
+                class="filter-btn px-6 py-2 rounded-full border border-gray-700 text-gray-300 hover:border-accent hover:text-accent transition-all"
+                onclick="filterProjects('collage', this)">Photo Collage</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="projects-grid">
+            <!-- Projects will be generated by JavaScript here -->
+        </div>
+    </section>
+
+    <!-- Project Data & Logic -->
+    <script>
+        // ECOFIGURATION: Add your project images here!
+        // Just copy a line and change the 'image', 'title', and 'category'.
+        // Categories: 'tute', 'social', 'logo', 'invitation', 'business', 'label', 'cv', 'book', 'tshirt', 'collage'
+
+        const projects = [
+            // Tute Cover Page Designs
+            { category: 'tute', title: 'Mathematics Tute', subtitle: 'Education', image: src = "im/17.png" },
+            { category: 'tute', title: 'Physics Guide', subtitle: 'Education', image: src = "im/18.png" },
+            { category: 'tute', title: 'Chemistry Notes', subtitle: 'Education', image: src = "im/19.png" },
+            { category: 'tute', title: 'Biology Paper', subtitle: 'Education', image: src = "im/20.png" },
+
+            // Social Media Designs
+            { category: 'social', title: 'Fashion Sale', subtitle: 'Instagram Post', image: src = "im/x0.png" },
+            { category: 'social', title: 'Food Promo', subtitle: 'Facebook Ad', image: src = "im/x1.png" },
+            { category: 'social', title: 'Tech Event', subtitle: 'LinkedIn Banner', image: src = "im/x2.png" },
+            { category: 'social', title: 'Gym Motivation', subtitle: 'Story Design', image: src = "im/x3.png" },
+
+            // Logo Designs
+            { category: 'logo', title: 'Tech Logo', subtitle: 'Branding', image: src = "im/13.png" },
+            { category: 'logo', title: 'Coffee Brand', subtitle: 'Branding', image: src = "im/14.png " },
+            { category: 'logo', title: 'Real Estate', subtitle: 'Branding', image: src = "im/15.png" },
+            { category: 'logo', title: 'Fitness Gym', subtitle: 'Branding', image: src = "im/16.png" },
+
+            // Invitation Cards
+            { category: 'invitation', title: 'Wedding Invite', subtitle: 'Events', image: src = "im/9.png" },
+            { category: 'invitation', title: 'Birthday Bash', subtitle: 'Events', image: src = "im/10.png" },
+            { category: 'invitation', title: 'Corporate Gala', subtitle: 'Events', image: src = "im/111.png" },
+            { category: 'invitation', title: 'Baby Shower', subtitle: 'Events', image: src = "im/122.png" },
+
+            // Business Cards
+            { category: 'business', title: 'CEO Card', subtitle: 'Corporate', image: src = "im/5.png" },
+            { category: 'business', title: 'Creative Studio', subtitle: 'Corporate', image: src = "im/6.png" },
+            { category: 'business', title: 'Minimalist', subtitle: 'Corporate', image: src = "im/7.png" },
+            { category: 'business', title: 'Dark Theme', subtitle: 'Corporate', image: src = "im/8.png" },
+
+            // Product Labels
+            { category: 'label', title: 'Juice Bottle', subtitle: 'Packaging', image: src = "im/1.png" },
+            { category: 'label', title: 'Cosmetic Jar', subtitle: 'Packaging', image: src = "im/2.png" },
+            { category: 'label', title: 'Coffee Bag', subtitle: 'Packaging', image: src = "im/3.png" },
+            { category: 'label', title: 'Supplement', subtitle: 'Packaging', image: src = "im/4.png" },
+
+            // CV Designs
+            { category: 'cv', title: 'Junior Dev', subtitle: 'Resume', image: src = "im/21.png" },
+            { category: 'cv', title: 'Senior Manager', subtitle: 'Resume', image: src = "im/22.png" },
+            { category: 'cv', title: 'Creative Designer', subtitle: 'Resume', image: src = "im/23.png" },
+            { category: 'cv', title: 'Executive', subtitle: 'Resume', image: src = "im/24.png" },
+
+            // Book Covers
+            { category: 'book', title: 'The Lost City', subtitle: 'Action', image: src = "im/25.png" },
+            { category: 'book', title: 'Mind Power', subtitle: 'Self Help', image: src = "im/26.png" }, // Reusing relevant image
+            { category: 'book', title: 'Nightmare', subtitle: 'Horror', image: src = "im/27.png" },
+            { category: 'book', title: 'Love Story', subtitle: 'Romance', image: src = "im/28.png" },
+
+            // T-Shirt Designs
+            { category: 'tshirt', title: 'Urban Style', subtitle: 'Fashion', image: src = "im/x0.png" },
+            { category: 'tshirt', title: 'Vintage Rock', subtitle: 'Fashion', image: src = "im/x1.png" },
+            { category: 'tshirt', title: 'Quote Tee', subtitle: 'Fashion', image: src = "im/x2.png" },
+            { category: 'tshirt', title: 'Logo Print', subtitle: 'Fashion', image: src = "im/x3.png" },
+
+            // Photo Collages
+            { category: 'collage', title: 'Summer Trip', subtitle: 'Memories', image: src = "im/29.png" },
+            { category: 'collage', title: 'Graduation', subtitle: 'Memories', image: src = "im/30.png" },
+            { category: 'collage', title: 'Best Friends', subtitle: 'Memories', image: src = "im/31.png" },
+            { category: 'collage', title: 'Baby Album', subtitle: 'Memories', image: src = "im/32.png" }
+        ];
+
+        function renderProjects(filter = 'all') {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = ''; // Clear current projects
+
+            projects.forEach(project => {
+                // If filter matches OR filter is 'all', show the project
+                if (filter === 'all' || project.category === filter) {
+                    const card = document.createElement('div');
+                    card.className = 'project-item group relative overflow-hidden rounded-xl border border-gray-800 animate-fade-in transition-all duration-300';
+                    card.innerHTML = `
+                        <img src="${project.image}" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110" alt="${project.title}">
+                        <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
+                            <h3 class="text-xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform">${project.title}</h3>
+                            <p class="text-accent mb-4 translate-y-4 group-hover:translate-y-0 transition-transform delay-75">${project.subtitle}</p>
+                            <!-- You can link this to a full view or modal if needed -->
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+            });
+        }
+
+        // Handle Filter Button Clicks
+        function filterProjects(category, btn) {
+            // Update active button style
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('active', 'bg-accent', 'text-primary');
+                b.classList.add('border-gray-700', 'text-gray-300');
+            });
+            btn.classList.add('active', 'bg-accent', 'text-primary');
+            btn.classList.remove('border-gray-700', 'text-gray-300');
+
+            // Re-render grid
+            renderProjects(category);
+        }
+
+        // Initial Render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects('all');
+        });
+    </script>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2026 Art Flux Designer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

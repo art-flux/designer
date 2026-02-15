@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - ART FLUX DESIGNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#38bdf8',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-primary text-white">
+
+    <nav class="fixed w-full z-50 bg-primary/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"
+                class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">ART
+                FLUX DESIGNER</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="hover:text-accent transition-colors">About</a>
+                <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+                <a href="videos.html" class="text-accent transition-colors">Videos</a>
+                <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-white"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-primary border-b border-gray-800" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="about.html" class="hover:text-accent">About</a>
+                <a href="services.html" class="hover:text-accent">Services</a>
+                <a href="projects.html" class="hover:text-accent">Projects</a>
+                <a href="videos.html" class="text-accent">Videos</a>
+                <a href="contact.html" class="hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 text-center bg-gray-900/50">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Design <span class="text-accent">Tutorials</span></h1>
+        <p class="text-secondary max-w-xl mx-auto">Watch our latest tutorials on graphic design, logo creation, and
+            more.</p>
+    </div>
+
+    <!-- Video Gallery Section -->
+    <section class="py-12 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Video 1: Logo Design -->
+            <div
+                class="bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300">
+                <div class="aspect-w-16 aspect-h-9 w-full">
+                    <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/zHaSoTj2kAA"
+                        title="Logo Design Process" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">How to Design a Professional Logo</h3>
+                    <p class="text-gray-400">Learn the step-by-step process of creating a unique and memorable logo for
+                        your brand.</p>
+                </div>
+            </div>
+
+            <!-- Video 2: Business Card -->
+            <div
+                class="bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300">
+                <div class="aspect-w-16 aspect-h-9 w-full">
+                    <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/3qA_Q4QyVrc"
+                        title="Business Card Design" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Business Card Design Masterclass</h3>
+                    <p class="text-gray-400">Discover how to design impactful business cards that leave a lasting
+                        impression.</p>
+                </div>
+            </div>
+
+            <!-- Video 3: Graphic Design Basics -->
+            <div
+                class="bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300">
+                <div class="aspect-w-16 aspect-h-9 w-full">
+                    <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/YqQx75OPRa0"
+                        title="Graphic Design Basics" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Graphic Design Principles</h3>
+                    <p class="text-gray-400">Understand the core principles of design including typography, color
+                        theory, and layout.</p>
+                </div>
+            </div>
+
+            <!-- Video 4: Social Media Design -->
+            <div
+                class="bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700 hover:border-accent transition-all duration-300">
+                <div class="aspect-w-16 aspect-h-9 w-full">
+                    <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/dFSia1L89yY"
+                        title="Social Media Design" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Social Media Post Design</h3>
+                    <p class="text-gray-400">Learn to create engaging social media graphics that drive engagement and
+                        clicks.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2026 Art Flux Designer. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
