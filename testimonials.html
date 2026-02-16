@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonials - ART FLUX DESIGNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#38bdf8',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-primary min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-primary/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-2 py-2 flex justify-between items-center">
+            <a href="index.html" class="flex items-center"><img src="im/x8.png" alt="ART FLUX DESIGNER"
+                    class="h-[60px] w-auto"></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-primary border-b border-gray-800" id="mobile-menu">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="hover:text-accent">Home</a>
+                <a href="services.html" class="hover:text-accent">Services</a>
+                <a href="contact.html" class="hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 pt-32 pb-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Happy <span class="text-accent">Customers</span></h1>
+            <p class="text-secondary max-w-xl mx-auto">See what our clients are saying about our work.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Add Comment Form -->
+            <div class="lg:col-span-1">
+                <div class="glass-panel p-6 rounded-2xl sticky top-32">
+                    <h2 class="text-2xl font-bold mb-6 text-white">Share Your Experience</h2>
+                    <form id="testimonialForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
+                            <input type="text" id="clientName" required
+                                class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Service Purchased</label>
+                            <select id="serviceCategory" required
+                                class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent">
+                                <option value="" disabled selected>Select a Service</option>
+                                <option value="Tute Cover Page Design">Tute Cover Page Design</option>
+                                <option value="Social Media Post Design">Social Media Post Design</option>
+                                <option value="Logo Design">Logo Design</option>
+                                <option value="Invitation Card">Invitation Card</option>
+                                <option value="Business Card">Business Card</option>
+                                <option value="Product Label">Product Label</option>
+                                <option value="CV Design">CV Design</option>
+                                <option value="Book Cover Design">Book Cover Design</option>
+                                <option value="T-Shirt Design">T-Shirt Design</option>
+                                <option value="Photo Collage">Photo Collage</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Your Comment</label>
+                            <textarea id="clientComment" required rows="4"
+                                class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent"
+                                placeholder="Great service!"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-accent text-primary font-bold py-3 rounded-lg hover:bg-white transition-all transform hover:scale-105">
+                            Submit Feedback
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Comments Display -->
+            <div class="lg:col-span-2">
+                <!-- Filter -->
+                <div class="mb-6 flex overflow-x-auto pb-4 gap-2 no-scrollbar" id="filterContainer">
+                    <button
+                        class="filter-btn active px-4 py-2 rounded-full bg-accent text-primary font-semibold whitespace-nowrap"
+                        data-filter="All">All Comments</button>
+                    <!-- Other buttons will be generated by JS or static? Keeping static for main ones or dynamic -->
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div id="testimonialsList" class="grid gap-6">
+                    <!-- Comments will be injected here -->
+                    <div class="text-center text-gray-500 py-10 hidden" id="noCommentsMsg">No comments yet. Be the
+                        first!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Art Flux Designer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Default services for filter buttons
+        const services = [
+            "Tute Cover Page Design", "Social Media Post Design", "Logo Design",
+            "Invitation Card", "Business Card", "Product Label",
+            "CV Design", "Book Cover Design", "T-Shirt Design", "Photo Collage", "Other"
+        ];
+
+        const filterContainer = document.getElementById('filterContainer');
+        const testimonialsList = document.getElementById('testimonialsList');
+        const testimonialForm = document.getElementById('testimonialForm');
+        const noCommentsMsg = document.getElementById('noCommentsMsg');
+
+        // Initial Data (Simulation)
+        let testimonials = JSON.parse(localStorage.getItem('artflux_testimonials')) || [
+            {
+                name: "Shehan Perera",
+                service: "Logo Design",
+                comment: "Amazing work! The logo captured my brand perfectly.",
+                date: "2026-02-10"
+            },
+            {
+                name: "Kamal De Silva",
+                service: "Business Card",
+                comment: "Very professional designs and fast delivery.",
+                date: "2026-02-12"
+            }
+        ];
+
+        // Generate Filter Buttons
+        services.forEach(service => {
+            const btn = document.createElement('button');
+            btn.className = "filter-btn px-4 py-2 rounded-full border border-gray-700 hover:border-accent hover:text-accent text-gray-300 font-medium whitespace-nowrap transition-all";
+            btn.innerText = service;
+            btn.dataset.filter = service;
+            btn.onclick = () => filterTestimonials(service, btn);
+            filterContainer.appendChild(btn);
+        });
+
+        // Add event listener to "All" button
+        const allBtn = filterContainer.querySelector('[data-filter="All"]');
+        allBtn.onclick = () => filterTestimonials('All', allBtn);
+
+        function renderTestimonials(filter = 'All') {
+            testimonialsList.innerHTML = '';
+
+            const filtered = filter === 'All'
+                ? testimonials
+                : testimonials.filter(t => t.service === filter);
+
+            if (filtered.length === 0) {
+                noCommentsMsg.classList.remove('hidden');
+                testimonialsList.appendChild(noCommentsMsg);
+                return;
+            } else {
+                noCommentsMsg.classList.add('hidden');
+            }
+
+            filtered.slice().reverse().forEach(t => { // Show newest first
+                const card = document.createElement('div');
+                card.className = "glass-panel p-6 rounded-2xl animate-float hover:border-accent transition-all";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-lg text-white">${t.name}</h3>
+                            <span class="text-xs text-accent px-2 py-1 bg-accent/10 rounded-full">${t.service}</span>
+                        </div>
+                        <span class="text-xs text-secondary">${t.date}</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">${t.comment}</p>
+                `;
+                testimonialsList.appendChild(card);
+            });
+        }
+
+        function filterTestimonials(category, btnElement) {
+            // Update active state
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-accent', 'text-primary');
+                btn.classList.add('border-gray-700', 'text-gray-300');
+            });
+            btnElement.classList.remove('border-gray-700', 'text-gray-300');
+            btnElement.classList.add('bg-accent', 'text-primary');
+
+            renderTestimonials(category);
+        }
+
+        // Handle Form Submit
+        testimonialForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('serviceCategory').value;
+            const comment = document.getElementById('clientComment').value;
+            const date = new Date().toISOString().split('T')[0];
+
+            const newTestimonial = { name, service, comment, date };
+            testimonials.push(newTestimonial);
+
+            // Save to localStorage
+            localStorage.setItem('artflux_testimonials', JSON.stringify(testimonials));
+
+            // Reset Form
+            testimonialForm.reset();
+
+            // Re-render (switches back to 'All' view to show new comment effectively, or we could keep current filter)
+            // Let's switch to 'All' to ensure they see their comment
+            filterTestimonials('All', allBtn);
+
+            alert('Thank you for your feedback!');
+        });
+
+        // Initial Render
+        renderTestimonials();
+
+    </script>
+</body>
+
+</html>
